@@ -23,9 +23,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
-        <div className="mb-4">
-          <p className="text-sm font-semibold tracking-wide">REAL</p>
-        </div>
+       
         <h2 className="text-5xl md:text-7xl font-bold mb-4">
           We Fix Anywhere.
         </h2>
@@ -171,7 +169,7 @@ export default function Home() {
       {/* Testimonial */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
         <blockquote className="text-2xl md:text-3xl font-bold">
-          "My car stopped at midnight. Wheelfix arrived in 20 minutes. Truly a lifesaver!"
+          &ldquo;My car stopped at midnight. Wheelfix arrived in 20 minutes. Truly a lifesaver!&rdquo;
         </blockquote>
       </section>
 

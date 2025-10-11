@@ -22,7 +22,9 @@ export default function PrivacyPolicy() {
 
       {/* Hero Section */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
-        
+        <div className="mb-4">
+          <p className="text-sm font-semibold tracking-wide">REAL</p>
+        </div>
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
           Privacy Policy.
         </h2>
@@ -208,7 +210,7 @@ export default function PrivacyPolicy() {
 
         {/* Children's Privacy */}
         <section className="mb-16">
-          <h3 className="text-2xl font-bold mb-6">Children's Privacy</h3>
+          <h3 className="text-2xl font-bold mb-6">Children&apos;s Privacy</h3>
           <p className="text-gray-600 leading-relaxed">
             Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected data from a child without parental consent, we will take steps to delete that information.
           </p>
