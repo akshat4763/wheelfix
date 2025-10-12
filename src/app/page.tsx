@@ -13,9 +13,10 @@ export default function Home() {
           
           
         />
-            <blockquote className="mt-6 border-l-2 pl-6 italic">
-      &quot;We'll fix,&quot; your ride, WheelFix — hitting the road soon.&quot;
-    </blockquote>
+       <blockquote className="mt-6 border-l-2 pl-6 italic">
+  &quot;We&apos;ll fix, your ride, WheelFix — hitting the road soon.&quot;
+</blockquote>
+
 
       </div>
 
