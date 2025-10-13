@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Instagram, Linkedin, Facebook, ChevronDown } from 'lucide-react';
 
 export default function Home() {
@@ -15,10 +16,12 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <img 
+              <Image 
                 src="/logo.svg" 
                 alt="WheelFix" 
-                className="h-50 w-50 object-contain"
+                width={200}
+                height={50}
+                className="object-contain"
               />
             </div>
             
@@ -113,14 +116,17 @@ export default function Home() {
       {/* Main Content */}
       <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center relative">
         <div className="flex flex-col items-center justify-center px-8">
-          <img
+          <Image
             className="max-h-screen max-w-full w-auto h-auto"
             style={{ maxHeight: '60vh', maxWidth: '500px' }}
             src="/logo.svg"
             alt="WheelFix Logo"
+            width={500}
+            height={500}
+            priority
           />
           <blockquote className="mt-8 border-l-2 border-gray-300 pl-6 italic text-gray-700 text-lg max-w-xl text-center">
-            "We'll fix your ride, WheelFix — hitting the road soon."
+            &quot;We&apos;ll fix your ride, WheelFix — hitting the road soon.&quot;
           </blockquote>
         </div>
 
@@ -131,10 +137,12 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between gap-8">
             {/* Logo Section */}
             <div className="flex items-start">
-              <img 
+              <Image 
                 src="/logo.svg" 
                 alt="WheelFix" 
-                className="h-40 w-auto object-contain"
+                width={160}
+                height={160}
+                className="object-contain"
               />
             </div>
 
