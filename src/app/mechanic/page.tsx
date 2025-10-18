@@ -607,7 +607,7 @@ const MechanicPage = () => {
                 Thank You!
               </DialogTitle>
               <DialogDescription className="text-center text-base sm:text-lg text-gray-600 pt-2">
-                We'll notify you when Wheelfix launches.
+                We&apos;ll notify you when Wheelfix launches.
               </DialogDescription>
             </DialogHeader>
           </div>
