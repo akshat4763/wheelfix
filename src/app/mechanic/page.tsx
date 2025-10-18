@@ -8,6 +8,13 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 import NavBar from '@/components/ui/navigation-menu';
 import Footer from '@/components/ui/footer';
 import { supabase } from '@/lib/supabaseConfig';
@@ -40,6 +47,9 @@ const MechanicPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isClient, setIsClient] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
+  const [showErrorDialog, setShowErrorDialog] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -198,8 +208,11 @@ const MechanicPage = () => {
       }
 
       console.log("Application submitted successfully:", data);
-      alert("Application submitted successfully! We&apos;ll contact you soon.");
       
+      // Show success dialog
+      setShowSuccessDialog(true);
+      
+      // Reset form
       setFormData({
         name: "",
         phone: "",
@@ -211,9 +224,10 @@ const MechanicPage = () => {
       });
       
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'Please try again later.';
+      const errorMsg = error instanceof Error ? error.message : 'Please try again later.';
       console.error("Error submitting application:", error);
-      alert(`Error submitting application: ${errorMessage}`);
+      setErrorMessage(errorMsg);
+      setShowErrorDialog(true);
     } finally {
       setIsSubmitting(false);
     }
@@ -573,6 +587,53 @@ const MechanicPage = () => {
           </Button>
         </div>
       </section>
+
+      
+     {/* Success Dialog */}
+      <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <DialogContent className="sm:max-w-md rounded-3xl p-8 bg-white [&>button]:hidden">
+          <button
+            onClick={() => setShowSuccessDialog(false)}
+            className="absolute top-4 sm:top-6 right-4 sm:right-6 text-gray-400 hover:text-gray-600 z-10"
+          >
+            ✕
+          </button>
+          <div className="text-center space-y-6">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+              <span className="text-3xl text-green-600">✓</span>
+            </div>
+            <DialogHeader>
+              <DialogTitle className="text-2xl sm:text-3xl font-bold text-center text-black">
+                Thank You!
+              </DialogTitle>
+              <DialogDescription className="text-center text-base sm:text-lg text-gray-600 pt-2">
+                We'll notify you when Wheelfix launches.
+              </DialogDescription>
+            </DialogHeader>
+          </div>
+        </DialogContent>
+      </Dialog>
+      {/* Error Dialog */}
+      <Dialog open={showErrorDialog} onOpenChange={setShowErrorDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-center text-red-600">
+              Submission Failed
+            </DialogTitle>
+            <DialogDescription className="text-center text-base pt-4">
+              {errorMessage}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-center pt-4">
+            <Button
+              onClick={() => setShowErrorDialog(false)}
+              className="bg-black text-white hover:bg-gray-800 rounded-full px-8 py-3"
+            >
+              Try Again
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       <div className="h-20"></div>
       <Footer />
