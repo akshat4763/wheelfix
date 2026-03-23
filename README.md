@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WheelFix
+
+WheelFix is a web platform designed to simplify vehicle servicing and repair discovery. It provides users with a structured and efficient way to explore services, understand offerings, and connect with providers through a modern web interface.
+
+**Live:** https://www.wheelfix.in
+
+---
+
+## Overview
+
+This project focuses on delivering a fast, responsive, and maintainable frontend architecture using modern web technologies. It emphasizes performance, clean UI, and scalability.
+
+---
+
+## Tech Stack
+
+* Next.js (React)
+* TypeScript
+* CSS / Tailwind CSS
+* Deployment: Hostinger
+
+---
+
+## Features
+
+* Responsive layout across devices
+* Optimized page performance with Next.js
+* Modular component-based architecture
+* Clean and maintainable code structure
+* Production deployment with custom domain
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Clone the repository
+
+```bash
+git clone https://github.com/your-username/wheelfix.git
+cd wheelfix
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit http://localhost:3000 to view the application locally.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+wheelfix/
+├── components/
+├── pages/
+├── public/
+├── styles/
+├── utils/
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The project is deployed on Hostinger and accessible via a custom domain.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Roadmap
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Add authentication and user accounts
+* Introduce booking and service scheduling
+* Integrate payment gateway
+* Add location-based service discovery
+* Improve SEO and analytics integration
+
+---
+
+## Author
+
+Akshat Sharma
+
+---
+
+## License
+
+This project is for demonstration and portfolio purposes.
